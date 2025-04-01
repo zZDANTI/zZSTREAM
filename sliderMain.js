@@ -540,7 +540,7 @@ const CONFIG = {
         console.log("Fetching random items from server...");
   
         const response = await fetch(
-          `${STATE.jellyfinData.serverAddress}/Items?IncludeItemTypes=Movie,Series&Recursive=true&hasOverview=true&imageTypes=Logo,Backdrop&sortBy=DateCreated&SortOrder=Descending&isPlayed=False&enableUserData=true&Limit=${CONFIG.maxItems}&fields=Id`,
+          `${STATE.jellyfinData.serverAddress}/Items?IncludeItemTypes=Movie,Series&Recursive=true&sortBy=DateCreated&SortOrder=Descending&Limit=${CONFIG.maxItems}&fields=Id`,
           {
             headers: this.getAuthHeaders(),
           }
