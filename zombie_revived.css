@@ -92,114 +92,81 @@ h4 {
   font-size: 0.8em;
   color: #cecece;
 }
+/* Oculta el título principal del login */
+#loginPage h1 {
+  display: none;
+}
 
-/* FORMULARIO LOGIN MÁS MODERNO Y ESTÉTICO */
-#loginPage .manualLoginForm {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.2em;
+/* Contenedor centrado y más elegante */
+#loginPage .padded-left.padded-right.padded-bottom-page {
+  margin: 5em auto 2em auto !important;
+  max-width: 28em;
   padding: 2em;
-  background-color: rgba(255, 255, 255, 0.03);
-  border-radius: 16px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(8px);
-  max-width: 100%;
+  backdrop-filter: blur(4px) brightness(1.1);
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: var(--rounding-large);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+}
+
+/* Oculta cabecera mientras se muestra el login */
+body:has(#loginPage:not(.hide)) .skinHeader {
+  display: none !important;
+}
+body:not(:has(#loginPage:not(.hide))) .skinHeader {
+  display: flex !important;
+}
+
+/* Imagen y animación de fondo */
+#loginPage {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgb(0 0 0 / 0.5), rgb(0 0 0 / 0.5)),
+    url(https://cdn.jsdelivr.net/gh/zZDANTI/zZSTREAM@main/img/loginImg/login2.gif);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  animation: 150s infinite alternate backgroundAnimation;
+  overflow: hidden;
+  z-index: 2;
+}
+
+/* Elimina margen superior innecesario */
+div#loginPage {
+  margin-top: 0 !important;
+}
+
+/* Oculta algunos elementos que no necesitas */
+#loginPage .pageTitleWithDefaultLogo,
+#loginPage .raised.cancel.block.btnForgotPassword.emby-button,
+.layout-mobile .detailImageContainer .card.portraitCard {
+  display: none !important;
+}
+
+/* Mejora los formularios y los botones */
+#loginPage form {
+  padding-top: 2em;
+}
+#loginPage form input,
+#loginPage form button {
+  font-size: 1.05em;
+}
+#loginPage .sectionTitle {
+  margin: 0 auto 1.5em auto !important;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+/* Tarjetas de usuario más grandes */
+#loginPage .squareCard {
+  width: 40%;
+  max-width: 150px;
+}
+
+/* Asegura altura completa */
+.manualLoginForm {
+  height: 100%;
   width: 100%;
 }
-
-/* INPUTS ESTILIZADOS */
-#loginPage .inputContainer {
-  width: 100%;
-  position: relative;
-}
-
-#loginPage .emby-input {
-  width: 100%;
-  padding: 1.1em 1em 0.8em;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background-color: rgba(255, 255, 255, 0.08);
-  color: #fff;
-  font-size: 1em;
-  transition: all 0.3s ease;
-}
-
-#loginPage .emby-input:focus {
-  outline: none;
-  background-color: rgba(255, 255, 255, 0.15);
-  border-color: #fff;
-}
-
-/* LABEL flotante */
-#loginPage .inputLabel {
-  position: absolute;
-  left: 1em;
-  top: 1em;
-  color: #ccc;
-  font-size: 1em;
-  pointer-events: none;
-  transition: all 0.3s ease;
-  background: rgba(0, 0, 0, 0.4);
-  padding: 0 0.3em;
-  border-radius: 4px;
-}
-
-#loginPage .emby-input:focus + .inputLabel,
-#loginPage .emby-input:not(:placeholder-shown):not([value=""]) + .inputLabel {
-  top: -0.7em;
-  left: 0.9em;
-  font-size: 0.75em;
-  color: #fff;
-}
-
-/* CHECKBOX */
-#loginPage .checkboxContainer {
-  display: flex;
-  align-items: center;
-  gap: 0.5em;
-  font-size: 0.95em;
-  color: #ddd;
-  margin-bottom: 1em;
-}
-
-/* BOTÓN DE INICIO DE SESIÓN */
-#loginPage .button-submit {
-  width: 100%;
-  padding: 0.9em;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #fff;
-  border-radius: 12px;
-  font-size: 1.1em;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-#loginPage .button-submit:hover {
-  background: rgba(255, 255, 255, 0.2);
-  border-color: white;
-}
-
-/* BOTÓN CANCELAR Y OTROS OPCIONALES */
-#loginPage .readOnlyContent button.emby-button {
-  background-color: rgba(255, 255, 255, 0.05);
-  color: #eee;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 10px;
-  margin-top: 0.7em;
-  padding: 0.6em;
-  transition: 0.3s ease;
-}
-
-#loginPage .readOnlyContent button.emby-button:hover {
-  background-color: rgba(255, 255, 255, 0.12);
-  border-color: #fff;
-}
-
-
-
 .layout-mobile .listItem-content .listItemImage-large {
   -webkit-tap-highlight-color: #fff0;
 }
