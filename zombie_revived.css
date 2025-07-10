@@ -92,66 +92,77 @@ h4 {
   font-size: 0.8em;
   color: #cecece;
 }
+/* Oculta el título principal del login */
 #loginPage h1 {
   display: none;
 }
+
+/* Contenedor centrado y más elegante */
 #loginPage .padded-left.padded-right.padded-bottom-page {
-  margin-top: 10px;
+  margin: 5em auto 2em auto !important;
+  max-width: 28em;
+  padding: 2em;
+  backdrop-filter: blur(4px) brightness(1.1);
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: var(--rounding-large);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
 }
+
+/* Oculta cabecera mientras se muestra el login */
 body:has(#loginPage:not(.hide)) .skinHeader {
   display: none !important;
-}
-body:has(#loginPage:not(.hide)) {
-  overflow: hidden !important;
 }
 body:not(:has(#loginPage:not(.hide))) .skinHeader {
   display: flex !important;
 }
-#loginPage .readOnlyContent,
-#loginPage form {
-  max-width: 22em;
-}
-#loginPage .padded-left.padded-right.padded-bottom-page {
-  margin-top: 4em !important;
-  margin-left: auto;
-  margin-right: auto;
-  backdrop-filter: blur(1px);
-  border-radius: var(--rounding-large);
-  overflow: auto;
-}
-#loginPage .squareCard {
-  width: 33%;
-}
-#loginPage form {
-  padding-top: 2em;
-}
-#loginPage .sectionTitle {
-  margin-left: auto !important;
-  margin-right: auto !important;
-  margin-bottom: 1.2em !important;
-}
-/* #loginPage .pageTitleWithDefaultLogo,
-.layout-mobile .detailImageContainer .card.portraitCard {
-  display: none !important;
-} */
+
+/* Imagen y animación de fondo */
 #loginPage {
   width: 100%;
   height: 100%;
   background-image: linear-gradient(rgb(0 0 0 / 0.5), rgb(0 0 0 / 0.5)),
     url(https://cdn.jsdelivr.net/gh/zZDANTI/zZSTREAM@main/img/loginImg/login2.gif);
-  background-position: top left;
   background-size: cover;
+  background-position: center;
   background-attachment: fixed;
   animation: 150s infinite alternate backgroundAnimation;
-  z-index: 2;
   overflow: hidden;
+  z-index: 2;
 }
-#loginPage .raised.cancel.block.btnForgotPassword.emby-button {
-  display: none;
-}
+
+/* Elimina margen superior innecesario */
 div#loginPage {
   margin-top: 0 !important;
 }
+
+/* Oculta algunos elementos que no necesitas */
+#loginPage .pageTitleWithDefaultLogo,
+#loginPage .raised.cancel.block.btnForgotPassword.emby-button,
+.layout-mobile .detailImageContainer .card.portraitCard {
+  display: none !important;
+}
+
+/* Mejora los formularios y los botones */
+#loginPage form {
+  padding-top: 2em;
+}
+#loginPage form input,
+#loginPage form button {
+  font-size: 1.05em;
+}
+#loginPage .sectionTitle {
+  margin: 0 auto 1.5em auto !important;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+/* Tarjetas de usuario más grandes */
+#loginPage .squareCard {
+  width: 40%;
+  max-width: 150px;
+}
+
+/* Asegura altura completa */
 .manualLoginForm {
   height: 100%;
   width: 100%;
