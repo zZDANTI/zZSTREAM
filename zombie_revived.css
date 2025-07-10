@@ -138,7 +138,7 @@ body:not(:has(#loginPage:not(.hide))) .skinHeader {
   width: 100%;
   height: 100%;
   background-image: linear-gradient(rgb(0 0 0 / 0.5), rgb(0 0 0 / 0.5)),
-    url(https://cdn.jsdelivr.net/gh/zZDANTI/zZSTREAM@main/videos/videoLogin.mp4);
+    url(https://cdn.jsdelivr.net/gh/zZDANTI/zZSTREAM@main/img/loginImg/login.gif);
   background-position: top left;
   background-size: cover;
   background-attachment: fixed;
@@ -569,6 +569,13 @@ a[href*="anidb.net"] {
   color: #fff0 !important;
   margin: 1.5em 0 !important;
 }
+/* .adminDrawerLogo img,
+imgLogoIcon {
+  content: url(https://cdn.jsdelivr.net/gh/MakD/zombie-release@main/logo/jellyfin-logo-light.png) !important;
+}
+.pageTitleWithLogo {
+  background-image: url(https://cdn.jsdelivr.net/gh/MakD/zombie-release@main/logo/jellyfin-logo-light.png) !important;
+} */
 #txtCustomCss,
 #txtLocalCustomCss {
   height: 400px !important;
@@ -2745,26 +2752,30 @@ layout-mobile .detailPagePrimaryContent {
 }
 @media (orientation: landscape) {
   .layout-mobile .backgroundContainer {
-    background: url("imagenes/33HI.gif") no-repeat center center;
-    background-size: cover;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -2;
+    background: url(https://cdn.jsdelivr.net/gh/stpnwf/ZestyTheme@latest/images/gradients/blue.png)
+      no-repeat center center;
   }
-
   .layout-mobile .itemBackdrop {
-    display: none; /* Ocultamos esta capa si ya usamos el GIF */
+    display: block;
+    background-attachment: fixed;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh !important;
+    position: fixed !important;
+    top: 0;
+    margin-top: 0;
+    left: 0;
+    width: 100%;
+    filter: blur(2px) saturate(120%) contrast(120%) brightness(50%);
+    animation: 0.2s ease-in-out both backdrop-fadein;
+    z-index: -1;
   }
-
   .layout-mobile .detailLogo {
     display: block;
     left: 6%;
     top: 20vh;
   }
-
   .layout-mobile .material-icons.detailButton-icon.check,
   .layout-mobile .material-icons.detailButton-icon.favorite,
   .layout-mobile .material-icons.detailButton-icon.more_vert,
@@ -2772,7 +2783,6 @@ layout-mobile .detailPagePrimaryContent {
   .layout-mobile .material-icons.detailButton-icon.theaters {
     display: none;
   }
-
   .layout-mobile .btnMoreCommands::after,
   .layout-mobile .btnPlay::after,
   .layout-mobile .btnPlayTrailer::after,
@@ -2782,7 +2792,6 @@ layout-mobile .detailPagePrimaryContent {
   .layout-mobile .btntheaters::after {
     content: attr(title);
   }
-
   .layout-mobile .detailButton {
     display: flex;
     flex-direction: row;
@@ -2791,7 +2800,6 @@ layout-mobile .detailPagePrimaryContent {
     width: auto;
     margin: 0;
   }
-
   .layout-mobile .detailPagePrimaryContainer {
     align-content: flex-start;
     display: flex;
@@ -2801,21 +2809,17 @@ layout-mobile .detailPagePrimaryContent {
     flex-wrap: wrap;
     align-items: flex-start;
   }
-
   .layout-mobile .mainDetailButtons {
     width: auto;
   }
-
   .layout-mobile .detailRibbon {
-    background: none;
+    background: 0 0;
     height: unset !important;
     margin-top: 35vh;
   }
-
   #childrenCollapsible .padded-right {
     padding-right: 0;
   }
-
   .layout-mobile .trackSelections {
     max-width: 44em;
     display: flex;
@@ -2993,4 +2997,3 @@ layout-mobile .detailPagePrimaryContent {
     width: 25em;
   }
 }
-
