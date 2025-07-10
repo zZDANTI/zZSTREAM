@@ -93,154 +93,111 @@ h4 {
   color: #cecece;
 }
 
-/* ===== CONTENEDOR CENTRAL ===== */
+/* FORMULARIO LOGIN MÁS MODERNO Y ESTÉTICO */
 #loginPage .manualLoginForm {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 3em;
-  max-width: 26em;
-  margin: auto;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
-  animation: fadeIn 0.6s ease;
+  gap: 1.2em;
+  padding: 2em;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  max-width: 100%;
+  width: 100%;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-#loginPage .sectionTitle {
-  font-size: 1.8em;
-  margin-bottom: 1.5em;
-  color: #ffffff;
-  text-align: center;
-}
-
-/* ===== INPUTS MODERNOS ===== */
-.inputContainer {
+/* INPUTS ESTILIZADOS */
+#loginPage .inputContainer {
   width: 100%;
   position: relative;
-  margin-bottom: 2em;
 }
 
-.emby-input {
+#loginPage .emby-input {
   width: 100%;
-  padding: 1.2em 1em 0.8em;
-  font-size: 1em;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 1.1em 1em 0.8em;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.08);
   color: #fff;
-  backdrop-filter: blur(6px);
+  font-size: 1em;
   transition: all 0.3s ease;
 }
 
-.emby-input:focus {
+#loginPage .emby-input:focus {
   outline: none;
-  background: rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.15);
   border-color: #fff;
 }
 
-/* ===== LABEL FLOAT ===== */
-.inputLabel {
+/* LABEL flotante */
+#loginPage .inputLabel {
   position: absolute;
   left: 1em;
-  top: 0.9em;
+  top: 1em;
   color: #ccc;
   font-size: 1em;
   pointer-events: none;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
   background: rgba(0, 0, 0, 0.4);
   padding: 0 0.3em;
   border-radius: 4px;
 }
 
-.emby-input:focus + .inputLabel,
-.emby-input:not(:placeholder-shown):not([value=""]) + .inputLabel {
-  top: -0.8em;
+#loginPage .emby-input:focus + .inputLabel,
+#loginPage .emby-input:not(:placeholder-shown):not([value=""]) + .inputLabel {
+  top: -0.7em;
   left: 0.9em;
-  font-size: 0.8em;
-  color: #ffffff;
+  font-size: 0.75em;
+  color: #fff;
 }
 
-/* ===== CHECKBOX ===== */
-.checkboxContainer {
+/* CHECKBOX */
+#loginPage .checkboxContainer {
   display: flex;
   align-items: center;
-  margin-top: -1em;
-  margin-bottom: 1.5em;
-  gap: 0.6em;
+  gap: 0.5em;
   font-size: 0.95em;
   color: #ddd;
-}
-
-.emby-checkbox {
-  width: 1.2em;
-  height: 1.2em;
-  accent-color: #00bcd4;
-}
-
-/* ===== BOTÓN LOGIN ===== */
-.button-submit {
-  padding: 0.9em 2em;
-  font-size: 1em;
-  font-weight: 500;
-  color: white;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 12px;
-  backdrop-filter: blur(6px);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  width: 100%;
   margin-bottom: 1em;
 }
 
-.button-submit:hover {
+/* BOTÓN DE INICIO DE SESIÓN */
+#loginPage .button-submit {
+  width: 100%;
+  padding: 0.9em;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border-radius: 12px;
+  font-size: 1.1em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#loginPage .button-submit:hover {
   background: rgba(255, 255, 255, 0.2);
   border-color: white;
 }
 
-/* ===== TEXTOS y BOTONES OPCIONALES ===== */
-.readOnlyContent {
-  text-align: center;
-  margin-top: 1.5em;
-  color: #aaa;
-  font-size: 0.95em;
-}
-
-.readOnlyContent button.emby-button {
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #fff;
-  margin-top: 0.5em;
-  padding: 0.7em;
+/* BOTÓN CANCELAR Y OTROS OPCIONALES */
+#loginPage .readOnlyContent button.emby-button {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #eee;
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 10px;
-  transition: all 0.3s ease;
+  margin-top: 0.7em;
+  padding: 0.6em;
+  transition: 0.3s ease;
 }
 
-.readOnlyContent button.emby-button:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: white;
+#loginPage .readOnlyContent button.emby-button:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: #fff;
 }
 
-/* ===== FONDO COMPLETO ===== */
-#loginPage {
-  display: flex !important;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
-    url(https://cdn.jsdelivr.net/gh/zZDANTI/zZSTREAM@main/img/loginImg/login2.gif);
-  background-size: cover;
-  background-position: center;
-  overflow: hidden;
-}
 
 
 .layout-mobile .listItem-content .listItemImage-large {
