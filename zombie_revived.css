@@ -92,10 +92,10 @@ h4 {
   font-size: 0.8em;
   color: #cecece;
 }
-/* Oculta el título principal del login
+/* Oculta el título principal del login */
 #loginPage h1 {
   display: none;
-} */
+}
 
 /* Contenedor centrado y más elegante */
 #loginPage .padded-left.padded-right.padded-bottom-page {
@@ -109,9 +109,9 @@ h4 {
 }
 
 /* Oculta cabecera mientras se muestra el login */
-/* body:has(#loginPage:not(.hide)) .skinHeader {
+body:has(#loginPage:not(.hide)) .skinHeader {
   display: none !important;
-} */
+}
 body:not(:has(#loginPage:not(.hide))) .skinHeader {
   display: flex !important;
 }
@@ -136,11 +136,11 @@ div#loginPage {
 }
 
 /* Oculta algunos elementos que no necesitas */
-/* #loginPage .pageTitleWithDefaultLogo,
+#loginPage .pageTitleWithDefaultLogo,
 #loginPage .raised.cancel.block.btnForgotPassword.emby-button,
 .layout-mobile .detailImageContainer .card.portraitCard {
   display: none !important;
-} */
+}
 
 /* Mejora los formularios y los botones */
 #loginPage form {
@@ -167,6 +167,37 @@ div#loginPage {
   height: 100%;
   width: 100%;
 }
+
+/* Botón moderno para iniciar sesión */
+.button-submit {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 1.1em;
+  padding: 0.8em 1.5em;
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Efecto hover más llamativo */
+.button-submit:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+/* Quitar estilos heredados de Jellyfin */
+.button-submit.emby-button {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+
 .layout-mobile .listItem-content .listItemImage-large {
   -webkit-tap-highlight-color: #fff0;
 }
