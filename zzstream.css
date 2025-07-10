@@ -2745,7 +2745,7 @@ layout-mobile .detailPagePrimaryContent {
 }
 @media (orientation: landscape) {
   .layout-mobile .backgroundContainer {
-    background: url(https://cdn.jsdelivr.net/gh/stpnwf/ZestyTheme@latest/images/gradients/blue.png)
+    background: url("imagenes/33HI.gif")
       no-repeat center center;
   }
   .layout-mobile .itemBackdrop {
