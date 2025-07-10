@@ -569,13 +569,6 @@ a[href*="anidb.net"] {
   color: #fff0 !important;
   margin: 1.5em 0 !important;
 }
-.adminDrawerLogo img,
-imgLogoIcon {
-  content: url(https://cdn.jsdelivr.net/gh/MakD/zombie-release@main/logo/jellyfin-logo-light.png) !important;
-}
-.pageTitleWithLogo {
-  background-image: url(https://cdn.jsdelivr.net/gh/MakD/zombie-release@main/logo/jellyfin-logo-light.png) !important;
-}
 #txtCustomCss,
 #txtLocalCustomCss {
   height: 400px !important;
