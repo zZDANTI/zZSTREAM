@@ -168,6 +168,73 @@ div#loginPage {
   width: 100%;
 }
 
+/* ===== INPUTS ===== */
+.inputContainer {
+  position: relative;
+  margin-bottom: 2.5em;
+}
+
+.inputLabel {
+  color: #ddd;
+  font-size: 1em;
+  position: absolute;
+  top: 0.6em;
+  left: 1em;
+  pointer-events: none;
+  transition: 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 0 0.3em;
+  border-radius: 5px;
+}
+
+.inputLabel-float {
+  transform: translateY(-1.5em);
+  font-size: 0.85em;
+  color: #ccc;
+}
+
+/* INPUT FIELD MODERNO */
+.emby-input {
+  width: 100%;
+  padding: 1em;
+  font-size: 1em;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border-radius: 10px;
+  backdrop-filter: blur(6px);
+  transition: all 0.3s ease;
+}
+
+.emby-input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #fff;
+}
+
+/* ===== CHECKBOX "Recuérdame" ===== */
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin-top: 1em;
+  color: #ddd;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.emby-checkbox {
+  width: 1.2em;
+  height: 1.2em;
+  accent-color: #00bcd4;
+  cursor: pointer;
+}
+
+.checkboxOutline {
+  display: none; /* ocultar los íconos extra si no los usas */
+}
+
+
 /* Botón moderno para iniciar sesión */
 .button-submit {
   background: rgba(255, 255, 255, 0.1);
