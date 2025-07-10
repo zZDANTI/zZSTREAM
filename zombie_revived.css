@@ -92,176 +92,154 @@ h4 {
   font-size: 0.8em;
   color: #cecece;
 }
-/* Oculta el título principal del login */
-#loginPage h1 {
-  display: none;
+
+/* ===== CONTENEDOR CENTRAL ===== */
+#loginPage .manualLoginForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3em;
+  max-width: 26em;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+  animation: fadeIn 0.6s ease;
 }
 
-/* Contenedor centrado y más elegante */
-#loginPage .padded-left.padded-right.padded-bottom-page {
-  margin: 5em auto 2em auto !important;
-  max-width: 28em;
-  padding: 2em;
-  backdrop-filter: blur(4px) brightness(1.1);
-  background-color: rgba(0, 0, 0, 0.4);
-  border-radius: var(--rounding-large);
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* Oculta cabecera mientras se muestra el login */
-body:has(#loginPage:not(.hide)) .skinHeader {
-  display: none !important;
-}
-body:not(:has(#loginPage:not(.hide))) .skinHeader {
-  display: flex !important;
-}
-
-/* Imagen y animación de fondo */
-#loginPage {
-  width: 100%;
-  height: 100%;
-  background-image: linear-gradient(rgb(0 0 0 / 0.5), rgb(0 0 0 / 0.5)),
-    url(https://cdn.jsdelivr.net/gh/zZDANTI/zZSTREAM@main/img/loginImg/login2.gif);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  animation: 150s infinite alternate backgroundAnimation;
-  overflow: hidden;
-  z-index: 2;
-}
-
-/* Elimina margen superior innecesario */
-div#loginPage {
-  margin-top: 0 !important;
-}
-
-/* Oculta algunos elementos que no necesitas */
-#loginPage .pageTitleWithDefaultLogo,
-#loginPage .raised.cancel.block.btnForgotPassword.emby-button,
-.layout-mobile .detailImageContainer .card.portraitCard {
-  display: none !important;
-}
-
-/* Mejora los formularios y los botones */
-#loginPage form {
-  padding-top: 2em;
-}
-#loginPage form input,
-#loginPage form button {
-  font-size: 1.05em;
-}
 #loginPage .sectionTitle {
-  margin: 0 auto 1.5em auto !important;
-  font-size: 1.5em;
+  font-size: 1.8em;
+  margin-bottom: 1.5em;
+  color: #ffffff;
   text-align: center;
 }
 
-/* Tarjetas de usuario más grandes */
-#loginPage .squareCard {
-  width: 40%;
-  max-width: 150px;
-}
-
-/* Asegura altura completa */
-.manualLoginForm {
-  height: 100%;
-  width: 100%;
-}
-
-/* ===== INPUTS ===== */
+/* ===== INPUTS MODERNOS ===== */
 .inputContainer {
+  width: 100%;
   position: relative;
-  margin-bottom: 2.5em;
+  margin-bottom: 2em;
 }
 
-.inputLabel {
-  color: #ddd;
-  font-size: 1em;
-  position: absolute;
-  top: 0.6em;
-  left: 1em;
-  pointer-events: none;
-  transition: 0.3s ease;
-  background-color: rgba(0, 0, 0, 0.4);
-  padding: 0 0.3em;
-  border-radius: 5px;
-}
-
-.inputLabel-float {
-  transform: translateY(-1.5em);
-  font-size: 0.85em;
-  color: #ccc;
-}
-
-/* INPUT FIELD MODERNO */
 .emby-input {
   width: 100%;
-  padding: 1em;
+  padding: 1.2em 1em 0.8em;
   font-size: 1em;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
   color: #fff;
-  border-radius: 10px;
   backdrop-filter: blur(6px);
   transition: all 0.3s ease;
 }
 
 .emby-input:focus {
   outline: none;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.15);
   border-color: #fff;
 }
 
-/* ===== CHECKBOX "Recuérdame" ===== */
+/* ===== LABEL FLOAT ===== */
+.inputLabel {
+  position: absolute;
+  left: 1em;
+  top: 0.9em;
+  color: #ccc;
+  font-size: 1em;
+  pointer-events: none;
+  transition: 0.3s ease;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 0 0.3em;
+  border-radius: 4px;
+}
+
+.emby-input:focus + .inputLabel,
+.emby-input:not(:placeholder-shown):not([value=""]) + .inputLabel {
+  top: -0.8em;
+  left: 0.9em;
+  font-size: 0.8em;
+  color: #ffffff;
+}
+
+/* ===== CHECKBOX ===== */
 .checkboxContainer {
   display: flex;
   align-items: center;
-  gap: 0.5em;
-  margin-top: 1em;
+  margin-top: -1em;
+  margin-bottom: 1.5em;
+  gap: 0.6em;
+  font-size: 0.95em;
   color: #ddd;
-  font-size: 1em;
-  cursor: pointer;
 }
 
 .emby-checkbox {
   width: 1.2em;
   height: 1.2em;
   accent-color: #00bcd4;
-  cursor: pointer;
 }
 
-.checkboxOutline {
-  display: none; /* ocultar los íconos extra si no los usas */
-}
-
-
-/* Botón moderno para iniciar sesión */
+/* ===== BOTÓN LOGIN ===== */
 .button-submit {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #fff;
-  font-size: 1.1em;
-  padding: 0.8em 1.5em;
+  padding: 0.9em 2em;
+  font-size: 1em;
+  font-weight: 500;
+  color: white;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 12px;
   backdrop-filter: blur(6px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease-in-out;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-/* Efecto hover más llamativo */
-.button-submit:hover {
-  background: rgba(255, 255, 255, 0.25);
-  transform: scale(1.05);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
   cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-bottom: 1em;
 }
 
-/* Quitar estilos heredados de Jellyfin */
-.button-submit.emby-button {
-  border: none !important;
-  box-shadow: none !important;
+.button-submit:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: white;
+}
+
+/* ===== TEXTOS y BOTONES OPCIONALES ===== */
+.readOnlyContent {
+  text-align: center;
+  margin-top: 1.5em;
+  color: #aaa;
+  font-size: 0.95em;
+}
+
+.readOnlyContent button.emby-button {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  margin-top: 0.5em;
+  padding: 0.7em;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.readOnlyContent button.emby-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: white;
+}
+
+/* ===== FONDO COMPLETO ===== */
+#loginPage {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
+    url(https://cdn.jsdelivr.net/gh/zZDANTI/zZSTREAM@main/img/loginImg/login2.gif);
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
 }
 
 
