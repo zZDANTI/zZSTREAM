@@ -3106,3 +3106,65 @@ layout-mobile .detailPagePrimaryContent {
     width: 25em;
   }
 }
+
+/* GIF MARVEL */
+.card[data-id='ecca8d7a6af1fadc2163c39dc9ab2b90']:hover .cardImageContainer,
+.card.show-animation[data-id='ecca8d7a6af1fadc2163c39dc9ab2b90']:focus .cardImageContainer {
+    background-image: url("https://zzstream.us/Items/ecca8d7a6af1fadc2163c39dc9ab2b90/Images/Logo?maxWidth=640&tag=91afb5051c920901cc9a9bf43b8fdeba&quality=90") !important;
+}
+
+/* GIF DC*/
+.card[data-id='40ddce56cb7befee7c40253e4cfb6e68']:hover .cardImageContainer,
+.card.show-animation[data-id='40ddce56cb7befee7c40253e4cfb6e68']:focus .cardImageContainer {
+    background-image: url("https://zzstream.us/Items/40ddce56cb7befee7c40253e4cfb6e68/Images/Logo?maxWidth=640&tag=f25f43274e9735c6b11daa634c76ddb0&quality=90") !important;
+}
+
+/* GIF TELE*/
+.card[data-id='357b2b218b5adb74c3e8d4e29f38683f']:hover .cardImageContainer,
+.card.show-animation[data-id='357b2b218b5adb74c3e8d4e29f38683f']:focus .cardImageContainer {
+    background-image: url("https://zzstream.us/Items/357b2b218b5adb74c3e8d4e29f38683f/Images/Logo?maxWidth=640&tag=4a94ad310cca0855fb4fefa95ab70e0c&quality=90") !important;
+}
+
+.skip-button-container {
+  position: fixed !important;
+  bottom: 10em !important;
+  right: 2.5em !important;
+  left: auto !important;
+  top: auto !important;
+  z-index: 9999 !important;
+  transform: none !important;
+  pointer-events: auto !important;
+}
+
+.skip-button {
+  background-color: white !important;
+  color: black !important;
+  padding: 1.0em 1.6em !important;
+  border-radius: 14px !important;
+  font-size: 14px !important;
+  font-weight: bold !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+  border: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.4em !important;
+  white-space: nowrap !important; /* 🔥 esto evita el salto de línea */
+}
+
+.skip-button .material-icons {
+  font-size: 20px !important;
+  color: black !important;
+}
+
+.skip-button:hover {
+  background-color: #007bff !important; /* azul al pasar el mouse */
+  color: white !important;
+}
+
+.skip-button:hover .material-icons {
+  color: white !important;
+}
+.selectAudioContainer {
+    display: none !important;
+}
