@@ -678,13 +678,13 @@ a[href*="anidb.net"] {
   color: #fff0 !important;
   margin: 1.5em 0 !important;
 }
-/* .adminDrawerLogo img,
+.adminDrawerLogo img,
 imgLogoIcon {
-  content: url(https://cdn.jsdelivr.net/gh/MakD/zombie-release@main/logo/jellyfin-logo-light.png) !important;
+  content: url(https://cdn.jsdelivr.net/gh/zZDANTI/zZSTREAM@main/logo/jellyfin-logo-light2.png) !important;
 }
 .pageTitleWithLogo {
-  background-image: url(https://cdn.jsdelivr.net/gh/MakD/zombie-release@main/logo/jellyfin-logo-light.png) !important;
-} */
+  background-image: url(https://cdn.jsdelivr.net/gh/zZDANTI/zZSTREAM@main/logo/jellyfin-logo-light2.png) !important;
+}
 #txtCustomCss,
 #txtLocalCustomCss {
   height: 400px !important;
