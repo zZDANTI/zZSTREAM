@@ -142,6 +142,104 @@ div#loginPage {
   display: none !important;
 }
 
+
+* {
+  box-sizing: border-box;
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+    color: transparent; /* opcional para efecto */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    color: #ccc; /* Color gris al final */
+  }
+}
+
+
+/* Contenedor principal con flex columna */
+.padded-left.padded-right.padded-bottom-page.margin-auto-y {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+/* Logo ⚡zZSTREAM⚡ arriba */
+.loginDisclaimerContainer {
+  order: -1; /* Para que se muestre antes que el form */
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* Primer párrafo ⚡zZSTREAM⚡ */
+.loginDisclaimer p:nth-child(1) {
+  opacity: 0; /* Oculto inicialmente */
+  animation: slideInLeft 0.6s ease forwards;
+  animation-delay: 0s; /* Entra inmediatamente */
+  font-size: 2.2em;
+  font-weight: bold;
+  line-height: 1;
+  margin: 5px;
+  padding: 5px;
+  color: inherit;
+}
+
+/* Segundo párrafo */
+.loginDisclaimer p:nth-child(2) {
+  opacity: 0; /* Oculto inicialmente para animar */
+  animation: slideInLeft 0.2s ease forwards;
+  animation-delay: 0.30s; /* Entra rápido justo después */
+  font-size: 1.5em;
+  margin-top: 0.3em;
+  margin-bottom: 5px;
+  padding: 5px;
+  font-style: italic;
+}
+
+/* Párrafo del logo sin márgenes ni padding */
+.loginDisclaimer p {
+  margin: 5px;
+  padding: 5px;
+}
+
+/* Mantén el resto de tus estilos como están */
+.padded-bottom-page {
+  padding-bottom: 1.5em !important;
+}
+
+/* Animaciones para inputs y botones */
+.manualLoginForm .inputContainer label.inputLabel {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: fadeSlideUp 0.4s ease forwards;
+}
+
+.manualLoginForm input.emby-input:nth-of-type(1),
+.manualLoginForm .checkboxContainer,
+.manualLoginForm button.raised.button-submit.block.emby-button {
+  opacity: 0;
+  animation: fadeSlideUp 0.4s ease forwards;
+  animation-delay: 0.10s;
+}
+
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 /* Mejora los formularios y los botones */
 #loginPage form {
   padding-top: 2em;
