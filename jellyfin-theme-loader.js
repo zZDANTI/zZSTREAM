@@ -15,8 +15,16 @@
         const link = document.createElement("link");
         link.rel = "stylesheet";
         link.href = href;
-        document.head.appendChild(link);
+
+        // 👉 Insertar ANTES del CSS principal de Jellyfin
+        const jellyfinCSS = document.querySelector('link[href*="main.jellyfin"]');
+        if (jellyfinCSS) {
+            jellyfinCSS.parentNode.insertBefore(link, jellyfinCSS);
+        } else {
+            document.head.appendChild(link);
+        }
     }
+
 
     function loadJS(src) {
         const script = document.createElement("script");
@@ -56,15 +64,13 @@
         if (desktopLoaded) return;
         desktopLoaded = true;
 
-        /* 1️⃣ ElegantFin base */
-        loadCSS("https://cdn.jsdelivr.net/gh/lscambo13/ElegantFin@main/Theme/ElegantFin-jellyfin-theme-build-latest-minified.css");
-
-        /* 2️⃣ ElegantFin add-ons */
-        loadCSS("https://cdn.jsdelivr.net/gh/lscambo13/ElegantFin@main/Theme/assets/add-ons/media-bar-plugin-support-latest-min.css");
-
-        /* 3️⃣ Plugins visuales */
+         /*BARRA NAV DE PELICULAS CSS Y JS*/
         loadCSS("https://cdn.jsdelivr.net/gh/MakD/Jellyfin-Media-Bar@latest/slideshowpure.css");
         loadJS("https://cdn.jsdelivr.net/gh/MakD/Jellyfin-Media-Bar@latest/slideshowpure.js");
+
+        /* 💻 DESKTOP Y MOVIL*/
+        loadCSS("https://cdn.jsdelivr.net/gh/lscambo13/ElegantFin@main/Theme/ElegantFin-jellyfin-theme-build-latest-minified.css");
+        loadCSS("https://cdn.jsdelivr.net/gh/lscambo13/ElegantFin@main/Theme/assets/add-ons/media-bar-plugin-support-latest-min.css");
     }
 
     new MutationObserver(mutations => {
