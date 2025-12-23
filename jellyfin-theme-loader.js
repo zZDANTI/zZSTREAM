@@ -14,12 +14,24 @@
         document.head.appendChild(link);
     }
 
+    function loadJS(src, async = true) {
+        const script = document.createElement("script");
+        script.src = src;
+        script.async = async;
+        document.head.appendChild(script);
+    }
+
+
     function init() {
         if (isTV()) return; // ❌ TV → no cargar nada
 
+         // 🎨 CSS
         loadCSS("https://cdn.jsdelivr.net/gh/lscambo13/ElegantFin@main/Theme/ElegantFin-jellyfin-theme-build-latest-minified.css");
-        loadCSS("https://cdn.jsdelivr.net/gh/MakD/zombie-release@latest/zombie_revived.css");
+        loadCSS("https://cdn.jsdelivr.net/gh/MakD/Jellyfin-Media-Bar@latest/slideshowpure.css");
         loadCSS("https://cdn.jsdelivr.net/gh/lscambo13/ElegantFin@main/Theme/assets/add-ons/media-bar-plugin-support-latest-min.css");
+
+        // 🧠 JS
+        loadJS("https://cdn.jsdelivr.net/gh/MakD/Jellyfin-Media-Bar@latest/slideshowpure.js");
     }
 
     new MutationObserver(init)
