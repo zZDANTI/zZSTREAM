@@ -1,10 +1,14 @@
 (function () {
 
+    let desktopLoaded = false;
+    let IS_TV;
+
     function isTV() {
-        return (
+        if (IS_TV !== undefined) return IS_TV;
+        IS_TV =
             document.documentElement.classList.contains("layout-tv") ||
-            /TV|Android TV|SmartTV|Tizen|WebOS/i.test(navigator.userAgent)
-        );
+            /TV|Android TV|SmartTV|Tizen|WebOS/i.test(navigator.userAgent);
+        return IS_TV;
     }
 
     function loadCSS(href) {
@@ -21,24 +25,17 @@
         document.head.appendChild(script);
     }
 
-    /* ==================================================
-       📺 ÚNICA FUNCIÓN PARA CSS DE TV
-       TODO lo que pongas aquí SOLO afecta a la TV
-       ================================================== */
+    /* 📺 CSS SOLO TV */
     function tvCSS() {
         return `
-            /* 📺 TV ONLY */
-
             #customTabButton_1 {
                 display: none !important;
             }
-
         `;
     }
 
     function applyTVCSS() {
         if (!isTV()) return;
-
         if (document.getElementById("tv-only-css")) return;
 
         const style = document.createElement("style");
@@ -55,19 +52,28 @@
             return;
         }
 
-         /*BARRA NAV DE PELICULAS CSS Y JS*/
+        /* 💻 DESKTOP */
+        if (desktopLoaded) return;
+        desktopLoaded = true;
+
+        /* 1️⃣ ElegantFin base */
+        loadCSS("https://cdn.jsdelivr.net/gh/lscambo13/ElegantFin@main/Theme/ElegantFin-jellyfin-theme-build-latest-minified.css");
+
+        /* 2️⃣ ElegantFin add-ons */
+        loadCSS("https://cdn.jsdelivr.net/gh/lscambo13/ElegantFin@main/Theme/assets/add-ons/media-bar-plugin-support-latest-min.css");
+
+        /* 3️⃣ Plugins visuales */
         loadCSS("https://cdn.jsdelivr.net/gh/MakD/Jellyfin-Media-Bar@latest/slideshowpure.css");
         loadJS("https://cdn.jsdelivr.net/gh/MakD/Jellyfin-Media-Bar@latest/slideshowpure.js");
-
-        /* 💻 DESKTOP Y MOVIL*/
-        loadCSS("https://cdn.jsdelivr.net/gh/lscambo13/ElegantFin@main/Theme/assets/add-ons/media-bar-plugin-support-latest-min.css");
-        loadCSS("https://cdn.jsdelivr.net/gh/lscambo13/ElegantFin@main/Theme/ElegantFin-jellyfin-theme-build-latest-minified.css");
-        
-
     }
 
-    new MutationObserver(init)
-        .observe(document.documentElement, { attributes: true });
+    new MutationObserver(mutations => {
+        for (const m of mutations) {
+            if (m.attributeName === "class") {
+                init();
+            }
+        }
+    }).observe(document.documentElement, { attributes: true });
 
     init();
 })();
