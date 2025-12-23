@@ -23,7 +23,7 @@
 
 
     function init() {
-        if (isTV()) return; // ❌ TV → no cargar nada
+        if (isTV()) return; // ❌ TV → no cargar nada.
 
          // 🎨 CSS
         loadCSS("https://cdn.jsdelivr.net/gh/lscambo13/ElegantFin@main/Theme/ElegantFin-jellyfin-theme-build-latest-minified.css");
