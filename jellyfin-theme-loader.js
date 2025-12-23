@@ -3,7 +3,7 @@
     function isTV() {
         return (
             document.documentElement.classList.contains("layout-tv") ||
-            navigator.userAgent.match(/TV|Android TV|SmartTV|Tizen|WebOS/i)
+            /TV|Android TV|SmartTV|Tizen|WebOS/i.test(navigator.userAgent)
         );
     }
 
@@ -14,28 +14,58 @@
         document.head.appendChild(link);
     }
 
-    function loadJS(src, async = true) {
+    function loadJS(src) {
         const script = document.createElement("script");
         script.src = src;
-        script.async = async;
+        script.async = true;
         document.head.appendChild(script);
     }
 
+    /* ==================================================
+       📺 ÚNICA FUNCIÓN PARA CSS DE TV
+       TODO lo que pongas aquí SOLO afecta a la TV
+       ================================================== */
+    function tvCSS() {
+        return `
+            /* 📺 TV ONLY */
+
+            #customTabButton_1 {
+                display: none !important;
+            }
+
+        `;
+    }
+
+    function applyTVCSS() {
+        if (!isTV()) return;
+
+        if (document.getElementById("tv-only-css")) return;
+
+        const style = document.createElement("style");
+        style.id = "tv-only-css";
+        style.textContent = tvCSS();
+        document.head.appendChild(style);
+    }
 
     function init() {
-        if (isTV()) return; // ❌ TV → no cargar nada en la TV.
 
-         // 🎨 CSS
+        /* 📺 TV */
+        if (isTV()) {
+            applyTVCSS();
+            return;
+        }
+
+        /* 💻 DESKTOP Y MOVIL*/
         loadCSS("https://cdn.jsdelivr.net/gh/lscambo13/ElegantFin@main/Theme/ElegantFin-jellyfin-theme-build-latest-minified.css");
-        loadCSS("https://cdn.jsdelivr.net/gh/MakD/Jellyfin-Media-Bar@latest/slideshowpure.css");
         loadCSS("https://cdn.jsdelivr.net/gh/lscambo13/ElegantFin@main/Theme/assets/add-ons/media-bar-plugin-support-latest-min.css");
 
-        // 🧠 JS
+        /*BARRA NAV DE PELICULAS CSS Y JS*/
+        loadCSS("https://cdn.jsdelivr.net/gh/MakD/Jellyfin-Media-Bar@latest/slideshowpure.css");
         loadJS("https://cdn.jsdelivr.net/gh/MakD/Jellyfin-Media-Bar@latest/slideshowpure.js");
     }
 
     new MutationObserver(init)
-        .observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
+        .observe(document.documentElement, { attributes: true });
 
     init();
 })();
