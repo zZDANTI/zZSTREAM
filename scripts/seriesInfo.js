@@ -227,7 +227,7 @@
         if (childCount > 1) {
             const seasonsDiv = document.createElement('div');
             seasonsDiv.className = 'mediaInfoItem';
-            seasonsDiv.textContent = `${childCount} Seasons`;
+            seasonsDiv.textContent = `${childCount} Temporadas`;
             infoContainer.appendChild(seasonsDiv);
         }
 
@@ -236,7 +236,7 @@
         if (RecursiveItemCount > 0) {
             const episodesDiv = document.createElement('div');
             episodesDiv.className = 'mediaInfoItem';
-            episodesDiv.textContent = `${RecursiveItemCount} ${RecursiveItemCount === 1 ? 'Episode' : 'Episodes'}`;
+            episodesDiv.textContent = `${RecursiveItemCount} ${RecursiveItemCount === 1 ? 'Episodio' : 'Episodios'}`;
             infoContainer.appendChild(episodesDiv);
         }
 
@@ -247,7 +247,7 @@
             if (endTimeStr) {
                 const endTimeDiv = document.createElement('div');
                 endTimeDiv.className = 'mediaInfoItem';
-                endTimeDiv.textContent = `Ends at: ${endTimeStr}`;
+                endTimeDiv.textContent = `Termina a las: ${endTimeStr}`;
                 infoContainer.appendChild(endTimeDiv);
             }
         }
@@ -287,7 +287,7 @@
         if (episodeCount > 0) {
             const episodesDiv = document.createElement('div');
             episodesDiv.className = 'mediaInfoItem';
-            episodesDiv.textContent = `${episodeCount} ${episodeCount === 1 ? 'Episode' : 'Episodes'}`;
+            episodesDiv.textContent = `${episodeCount} ${episodeCount === 1 ? 'Episodio' : 'Episodios'}`;
             infoContainer.appendChild(episodesDiv);
         }
 
@@ -298,7 +298,7 @@
             if (endTimeStr) {
                 const endTimeDiv = document.createElement('div');
                 endTimeDiv.className = 'mediaInfoItem';
-                endTimeDiv.textContent = `Ends at: ${endTimeStr}`;
+                endTimeDiv.textContent = `Termina a las: ${endTimeStr}`;
                 infoContainer.appendChild(endTimeDiv);
             }
         }
