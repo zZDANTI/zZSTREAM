@@ -68,25 +68,33 @@
         desktopLoaded = true;
 
          /*BARRA NAV DE PELICULAS CSS Y JS*/
-        loadCSS("https://cdn.jsdelivr.net/gh/MakD/Jellyfin-Media-Bar@latest/slideshowpure.css");
+         /*BARRA NAV DE PELICULAS CSS Y JS*/
         await loadJS("https://cdn.jsdelivr.net/gh/MakD/Jellyfin-Media-Bar@latest/slideshowpure.js");
+        loadCSS("https://cdn.jsdelivr.net/gh/MakD/Jellyfin-Media-Bar@latest/slideshowpure.css");
+        
 
         /*Globales necesarias para los scripts de abajo*/
         await loadJS("https://cdn.jsdelivr.net/gh/ZZDANTI/zZSTREAM@latest/scripts/utils.js");
-        await loadJS("https://cdn.jsdelivr.net/gh/ZZDANTI/zZSTREAM@latest/scripts/cardBuilder.js");
-        await loadJS("https://cdn.jsdelivr.net/gh/ZZDANTI/zZSTREAM@latest/scripts/localStorageCache.js");
-        await loadJS("https://cdn.jsdelivr.net/gh/ZZDANTI/zZSTREAM@latest/scripts/modal.js");
+        //loadJS("https://cdn.jsdelivr.net/gh/ZZDANTI/zZSTREAM@latest/scripts/cardBuilder.js");
+        //loadJS("https://cdn.jsdelivr.net/gh/ZZDANTI/zZSTREAM@latest/scripts/localStorageCache.js");
+        //loadJS("https://cdn.jsdelivr.net/gh/ZZDANTI/zZSTREAM@latest/scripts/modal.js");
         
         
         /**CSS para scripts importados */
-        loadCSS("https://cdn.jsdelivr.net/gh/ZZDANTI/zZSTREAM@latest/scripts/watchlist.css");
-        loadCSS("https://cdn.jsdelivr.net/gh/ZZDANTI/zZSTREAM@latest/scripts/modal.css");
-        loadCSS("https://cdn.jsdelivr.net/gh/ZZDANTI/zZSTREAM@latest/scripts/cardBuilder.css");
+        //loadCSS("https://cdn.jsdelivr.net/gh/ZZDANTI/zZSTREAM@latest/scripts/watchlist.css");
+        //loadCSS("https://cdn.jsdelivr.net/gh/ZZDANTI/zZSTREAM@latest/scripts/modal.css");
+        //loadCSS("https://cdn.jsdelivr.net/gh/ZZDANTI/zZSTREAM@latest/scripts/cardBuilder.css");
     
         /*Funciones complemetarias*/
-        await loadJS("https://cdn.jsdelivr.net/gh/ZZDANTI/zZSTREAM@latest/scripts/watchlist.js");
-        await loadJS("https://cdn.jsdelivr.net/gh/ZZDANTI/zZSTREAM@latest/scripts/removeContinue.js");
-        await loadJS("https://cdn.jsdelivr.net/gh/ZZDANTI/zZSTREAM@latest/scripts/seriesInfo.js");
+        //loadJS("https://cdn.jsdelivr.net/gh/ZZDANTI/zZSTREAM@latest/scripts/watchlist.js");
+        loadJS("https://cdn.jsdelivr.net/gh/ZZDANTI/zZSTREAM@latest/scripts/removeContinue.js");
+        loadJS("https://cdn.jsdelivr.net/gh/ZZDANTI/zZSTREAM@latest/scripts/seriesInfo.js");
+
+        const script = document.createElement("script");
+        script.src = `https://cdn.jsdelivr.net/gh/ranaldsgift/KefinTweaks@latest/kefinTweaks-plugin.js`;
+        script.async = true;
+        document.head.appendChild(script);
+        
         
 
         
