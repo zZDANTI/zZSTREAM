@@ -3,13 +3,6 @@
     let desktopLoaded = false;
     let IS_TV;
 
-    async function waitForApiClient() {
-        while (!window.ApiClient) {
-            await new Promise(r => setTimeout(r, 300));
-        }
-    }
-
-
     function isTV() {
         if (IS_TV !== undefined) return IS_TV;
         IS_TV =
@@ -82,24 +75,14 @@
 
         /*Globales necesarias para los scripts de abajo*/
         await loadJS("https://cdn.jsdelivr.net/gh/ZZDANTI/zZSTREAM@latest/scripts/utils.js");
-        await loadJS("https://cdn.jsdelivr.net/gh/ZZDANTI/zZSTREAM@latest/scripts/cardBuilder.js");
-        await loadJS("https://cdn.jsdelivr.net/gh/ZZDANTI/zZSTREAM@latest/scripts/localStorageCache.js");
-        await loadJS("https://cdn.jsdelivr.net/gh/ZZDANTI/zZSTREAM@latest/scripts/modal.js");
         
         
         /**CSS para scripts importados */
-        loadCSS("https://cdn.jsdelivr.net/gh/ZZDANTI/zZSTREAM@latest/scripts/watchlist.css");
-        loadCSS("https://cdn.jsdelivr.net/gh/ZZDANTI/zZSTREAM@latest/scripts/modal.css");
-        loadCSS("https://cdn.jsdelivr.net/gh/ZZDANTI/zZSTREAM@latest/scripts/cardBuilder.css");
-    
-        // ⏳ esperar a Jellyfin
-        await waitForApiClient();
+
 
         /*Funciones complemetarias*/
-        await loadJS("https://cdn.jsdelivr.net/gh/ZZDANTI/zZSTREAM@latest/scripts/watchlist.js");
         await loadJS("https://cdn.jsdelivr.net/gh/ZZDANTI/zZSTREAM@latest/scripts/removeContinue.js");
         await loadJS("https://cdn.jsdelivr.net/gh/ZZDANTI/zZSTREAM@latest/scripts/seriesInfo.js");
-        //await loadJS("https://cdn.jsdelivr.net/gh/ranaldsgift/KefinTweaks@latest/kefinTweaks-plugin.js");
 
         
         
