@@ -78,7 +78,7 @@
         
         
         /**CSS para scripts importados */
-        loadCSS("https://cdn.jsdelivr.net/gh/MakD/Jellyfin-Media-Bar@latest/pausescreen.css");
+        loadCSS("https://cdn.jsdelivr.net/gh/ZZDANTI/zZSTREAM@latest/scripts/pausescreen.css");
 
         /*Funciones complemetarias*/
         await loadJS("https://cdn.jsdelivr.net/gh/ZZDANTI/zZSTREAM@latest/scripts/pausescreen.js");
