@@ -27,10 +27,13 @@
 
 
     function loadJS(src) {
-        const script = document.createElement("script");
-        script.src = src;
-        script.async = true;
-        document.head.appendChild(script);
+        return new Promise((resolve, reject) => {
+            const script = document.createElement("script");
+            script.src = src;
+            script.onload = resolve;
+            script.onerror = reject;
+            document.head.appendChild(script);
+        });
     }
 
     /* 📺 CSS SOLO TV */
@@ -52,7 +55,7 @@
         document.head.appendChild(style);
     }
 
-    function init() {
+    async function init() {
 
         /* 📺 TV */
         if (isTV()) {
@@ -66,13 +69,14 @@
 
          /*BARRA NAV DE PELICULAS CSS Y JS*/
         loadCSS("https://cdn.jsdelivr.net/gh/MakD/Jellyfin-Media-Bar@latest/slideshowpure.css");
-        loadJS("https://cdn.jsdelivr.net/gh/MakD/Jellyfin-Media-Bar@latest/slideshowpure.js");
+        await loadJS("https://cdn.jsdelivr.net/gh/MakD/Jellyfin-Media-Bar@latest/slideshowpure.js");
 
         /*Globales necesarias para los scripts de abajo*/
-        loadJS("https://cdn.jsdelivr.net/gh/ZZDANTI/zZSTREAM@latest/scripts/cardBuilder.js");
-        loadJS("https://cdn.jsdelivr.net/gh/ZZDANTI/zZSTREAM@latest/scripts/localStorageCache.js");
-        loadJS("https://cdn.jsdelivr.net/gh/ZZDANTI/zZSTREAM@latest/scripts/modal.js");
-        loadJS("https://cdn.jsdelivr.net/gh/ZZDANTI/zZSTREAM@latest/scripts/utils.js");
+        await loadJS("https://cdn.jsdelivr.net/gh/ZZDANTI/zZSTREAM@latest/scripts/utils.js");
+        await loadJS("https://cdn.jsdelivr.net/gh/ZZDANTI/zZSTREAM@latest/scripts/cardBuilder.js");
+        await loadJS("https://cdn.jsdelivr.net/gh/ZZDANTI/zZSTREAM@latest/scripts/localStorageCache.js");
+        await loadJS("https://cdn.jsdelivr.net/gh/ZZDANTI/zZSTREAM@latest/scripts/modal.js");
+        
         
         /**CSS para scripts importados */
         loadCSS("https://cdn.jsdelivr.net/gh/ZZDANTI/zZSTREAM@latest/scripts/watchlist.css");
@@ -80,9 +84,9 @@
         loadCSS("https://cdn.jsdelivr.net/gh/ZZDANTI/zZSTREAM@latest/scripts/cardBuilder.css");
     
         /*Funciones complemetarias*/
-        loadJS("https://cdn.jsdelivr.net/gh/ZZDANTI/zZSTREAM@latest/scripts/watchlist.js");
-        loadJS("https://cdn.jsdelivr.net/gh/ZZDANTI/zZSTREAM@latest/scripts/removeContinue.js");
-        loadJS("https://cdn.jsdelivr.net/gh/ZZDANTI/zZSTREAM@latest/scripts/seriesInfo.js");
+        await loadJS("https://cdn.jsdelivr.net/gh/ZZDANTI/zZSTREAM@latest/scripts/watchlist.js");
+        await loadJS("https://cdn.jsdelivr.net/gh/ZZDANTI/zZSTREAM@latest/scripts/removeContinue.js");
+        await loadJS("https://cdn.jsdelivr.net/gh/ZZDANTI/zZSTREAM@latest/scripts/seriesInfo.js");
         
 
         
